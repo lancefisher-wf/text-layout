@@ -1,0 +1,27 @@
+var browserify = require('browserify');
+var gulp = require('gulp');
+var source = require('vinyl-source-stream');
+var react = require('gulp-react');
+
+gulp.task('default', ['jsx', 'browserify']);
+
+
+gulp.task('copy-js', function() {
+    gulp.src('./src/**/*.js', { base: './src' })
+        .pipe(gulp.dest('dist/src'));
+});
+
+gulp.task('jsx', function() {
+    return gulp.src('**/*.jsx')
+        .pipe(react())
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('browserify', function() {
+    return browserify('./dist/src/app.js')
+        .bundle()
+        //Pass desired output filename to vinyl-source-stream
+        .pipe(source('bundle.js'))
+        // Start piping stream to tasks!
+        .pipe(gulp.dest('./build/'));
+});

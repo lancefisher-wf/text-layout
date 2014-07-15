@@ -1,0 +1,24 @@
+{
+  "name": "text-layout",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.11.0-rc1",
+    "browserify": "^4.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "vinyl-source-stream": "^0.1.1",
+    "gulp-react": "^0.4.0",
+    "watchify": "^0.10.2",
+    "gulp-notify": "^1.4.0",
+    "gulp-util": "^2.2.20",
+    "reactify": "^0.13.1"
+  }
+}
